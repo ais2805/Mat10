@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi Jajar Genjang Kelas 5</title>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+:root{
+  --accent:#1565c0;
+  --accent-light:#64b5f6;
+  --muted:#666;
+  --card:#fff;
+  --bg:#f4f7fb;
+}
+
+/* === Global === */
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: #222;
+}
+
+/* === HEADER === */
+header {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+header h3 {
+  margin: 8px 0;
+  font-weight: 500;
+}
+header p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
+
+/* === NAVIGASI === */
+nav {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 5%;
+  border-bottom: 4px solid #0d47a1;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.08);
+}
+nav ul li a.active {
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* === Container === */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Matematika Kelas 5</h1>
+  <h3>Materi Geometri: Keliling dan Luas Jajar Genjang</h3>
+  <p>Pembelajaran interaktif dengan contoh visual dan video menarik!</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="Index.html">🏠 Beranda</a></li>
+    <li><a href="Materi KPK.html">🔢 Materi Bilangan</a></li>
+    <li><a href="Materi Geometri.html" class="active">📐 Materi Geometri</a></li>
+    <li><a href="Kuis.html">🧩 Kuis Bilangan</a></li>
+    <li><a href="Kuis Geometri.html">⚡ Kuis Geometri</a></li>
+    <li><a href="Evaluasi.html">✅ Evaluasi Bilangan</a></li>
+    <li><a href="Evaluasi Geometri.html">🏅 Evaluasi Geometri</a></li>
+  </ul>
+</nav>
+
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("nav ul li a").forEach(link=>{
+    if(link.getAttribute("href")===currentPage){
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<!-- === KONTEN UTAMA MULAI DI SINI === -->
+<div class="container">
+<h3>🎯 Capaian Pembelajaran</h3>
+<ul>
+Mengkonstruksi dan mengurai bangun ruang (kubus, balok, dan gabungannya) dan mengenali visualisasi spasial (bagian depan, atas, dan samping); membandingkan <mark>karakteristik antar bangun datar</mark> dan antar bangun ruang; serta menentukan lokasi pada menggunakan sistem berpetak.
+</ul>
+
+<h3>🎯 Tujuan Pembelajaran</h3>
+<ul>
+  <li>Peserta didik dapat menentukan keliling jajar genjang dengan tepat (C3).</li>
+  <li>Peserta didik dapat menentukan luas jajar genjang dengan tepat (C3).</li>
+  <li>Peserta didik dapat memecahkan masalah dari keliling dan luas jajar genjang melalui soal cerita dengan benar (C4).</li>
+  <li>Peserta didik dapat menunjukkan hasil yang berhubungan dengan keliling dan luas jajar genjang (P3).</li>
+</ul>
+
+<h3>📚 Materi Keliling dan Luas Jajar Genjang</h3>
+
+<p><mark><strong>🌟 Pengantar</mark></strong></p>
+
+<div class="materi">
+  <img src="D:\Mat10\Atap Rumah.png" alt="Atap Rumah" class="gambar1">
+  <ul><li><strong>Atap Rumah</strong></li></ul>
+</div>
+
+
+<p>
+  Pernahkah kamu melihat atap rumah yang miring? Atau pintu yang tidak tegak lurus? 
+  Nah, bentuk seperti itulah yang disebut <strong>jajar genjang</strong>!<br>
+  Jajar genjang adalah bangun datar yang memiliki 4 sisi, seperti persegi panjang, 
+  tetapi sisi-sisinya miring. Bayangkan kamu mendorong persegi panjang dari samping, 
+  maka bentuknya akan menjadi jajar genjang!
+</p>
+
+<p><mark>🔎 <strong>Ciri-Ciri Jajar Genjang</strong></mark></p>
+<div class="materi">
+  <img src="D:\Mat10\Ciri-Ciri Jajar Genjang.jpg" alt="Ciri-Ciri Jajar Genjang" class="gambar2">
+</div><p>
+<ul>
+  <li>Memiliki 4 sisi — Sama seperti persegi panjang, jajar genjang juga punya 4 sisi.</li>
+  <li>Sisi yang berhadapan sama panjang — Sisi atas dan bawah sama panjang, sisi kiri dan kanan juga sama panjang.</li>
+  <li>Sisi yang berhadapan sejajar — Sisi atas dan bawah tidak akan bertemu meskipun diperpanjang.</li>
+  <li>Sudutnya miring — Tidak ada sudut siku-siku (90°), semua sudutnya miring.</li>
+  <li>Sudut yang berhadapan sama besar — Sudut kiri atas = sudut kanan bawah, sudut kanan atas = sudut kiri bawah.</li>
+</ul></p>
+
+<p><mark>🧩 <strong>Unsur-Unsur Jajar Genjang</strong></mark></p>
+<p>Jajar genjang memiliki bagian-bagian penting yang perlu kita ketahui:</p>
+
+<div class="materi">
+  <img src="D:\Mat10\Unsur Jajar Genjang.png" alt="Unsur-Unsur Jajar Genjang" class="gambar3">
+</div>
+
+<ul>
+  <li><strong>Alas (a)</strong> — Sisi bawah yang menjadi dasar jajar genjang.</li>
+  <li><strong>Tinggi (t)</strong> — Jarak tegak lurus dari alas ke sisi atas (bukan sisi miring!).</li>
+  <li><strong>Sisi</strong> — Ada 4 sisi, yang berhadapan sama panjang.</li>
+  <li><strong>Sudut</strong> — Ada 4 sudut, yang berhadapan sama besar.</li>
+  <li><strong>Titik Sudut</strong> — Ada 4 titik sudut (A, B, C, D).</li>
+  <li><em>Tinggi itu harus tegak lurus (membentuk sudut siku-siku) dengan alas. Bukan sisi miringnya ya!</em></li>
+</ul>
+
+<p><mark>🧠 <strong>Menemukan Rumus Keliling</strong></mark></p>
+<div class="kotak-materi">
+  <div class="materi">
+    <img src="D:\Mat10\Rumus Keliling.png" alt="Rumus Keliling Jajar Genjang" class="gambar4">
+  </div>
+
+  <p>• <strong>Mari kita hitung!</strong><br>
+  Keliling = sisi atas + sisi kanan + sisi bawah + sisi kiri</p>
+
+  <p>• <strong>Ingat ciri-ciri jajar genjang!</strong><br>
+  Sisi yang berhadapan sama panjang:</p>
+  <ul>
+    <li>Sisi atas = Sisi bawah = a</li>
+    <li>Sisi kanan = Sisi kiri = b</li>
+  </ul>
+
+  <p>• <strong>Jadi kelilingnya adalah:</strong><br>
+  Keliling = a + b + a + b</p>
+
+  <p>• <strong>Kita bisa menyederhanakannya:</strong><br>
+  Keliling = a + a + b + b<br>
+  Keliling = 2a + 2b<br>
+  Keliling = 2 × (a + b)<br>
+  <strong>Keliling = 2 × (a + b)</strong></p>
+</div>
+
+<p><mark>🧠 <strong>Menemukan Rumus Luas</strong></mark></p>
+<p>Apa itu luas? Luas adalah besarnya daerah yang bisa kita cat atau warnai di dalam jajar genjang!</p>
+
+<div class="kotak-materi">
+  <div class="materi">
+    <img src="D:\Mat10\Rumus Luas.png" alt="Rumus Luas Jajar Genjang" class="gambar5">
+  </div>
+
+  <p><strong>Penjelasan:</strong></p>
+  <ol>
+    <li>Kita potong segitiga di ujung kanan jajar genjang.</li>
+    <li>Pindahkan ke ujung kiri.</li>
+    <li>Jadilah persegi panjang dengan panjang = alas (a) dan lebar = tinggi (t).</li>
+    <li>Luas persegi panjang = panjang × lebar = a × t.</li>
+  </ol>
+
+  <p>• <strong>Ingat rumus luas persegi panjang:</strong><br>
+  Luas persegi panjang = panjang × lebar</p>
+
+  <p>• <strong>Setelah dipotong dan dipindahkan:</strong></p>
+  <ul>
+    <li>Panjang persegi panjang = alas jajar genjang (<em>a</em>)</li>
+    <li>Lebar persegi panjang = tinggi jajar genjang (<em>t</em>)</li>
+  </ul>
+
+  <p>• <strong>Karena luasnya tetap sama:</strong><br>
+  Luas jajar genjang = Luas persegi panjang<br>
+  Luas jajar genjang = panjang × lebar<br>
+  Luas jajar genjang = alas × tinggi<br>
+  <strong>Luas = alas × tinggi = a × t</strong></p>
+
+  <p class="peringatan">
+    ⚠️ Ingat! Yang dipakai adalah <u>tinggi</u> (yang tegak lurus), bukan sisi miring ya!
+  </p>
+</div>
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  color: #0f172a;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container gambar */
+.materi {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style umum untuk semua gambar */
+.materi img {
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  object-fit: contain;
+  display: block;
+}
+
+/* Gambar 1 - Atap Rumah */
+.gambar1 {
+  width: 300px;
+  height: auto;
+}
+
+/* Gambar 2 - Ciri-Ciri Jajar Genjang */
+.gambar2 {
+  width: 300px;
+  height: auto;
+}
+
+/* Gambar 3 - Unsur Jajar Genjang */
+.gambar3 {
+  width: 280px;
+  height: auto;
+}
+
+/* Gambar 4 - Rumus Keliling Jajar Genjang */
+.gambar4 {
+  width: 280px;
+  height: auto;
+}
+
+/* Gambar 5 - Rumus Luas Jajar Genjang */
+.gambar5 {
+  width: 500px;
+  height: auto;
+}
+
+
+/* Keterangan gambar langsung menempel */
+.materi ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* --- Bagian penting: rapatkan teks materi dengan gambar di atasnya --- */
+.materi + p,
+.materi + ul,
+.materi + ol,
+.materi + div {
+  margin-top: -4px !important; /* negatif sedikit agar benar-benar nempel */
+  padding-top: 0 !important;
+}
+
+/* Hilangkan margin atas paragraf biasa */
+p, ul, ol {
+  margin-top: 0;
+}
+
+/* Kotak materi tanpa jarak */
+.kotak-materi {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+/* List dan paragraf di dalam penjelasan */
+.kotak-materi ul,
+.kotak-materi ol {
+  margin-left: 15px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+/* Peringatan */
+.peringatan {
+  margin-top: 2px;
+  color: #dc2626;
+  font-weight: 600;
+}
+</style>
+
+<!-- === CONTOH JAJAR GENJANG === -->
+<h3>🖼️ Contoh Jajar Genjang dalam Kehidupan Sehari-hari</h3>
+<div class="contoh-section">
+  <p class="caption-intro">
+    Bentuk jajar genjang ternyata sering kita temui di sekitar kita! Yuk lihat contohnya 👇
+  </p>
+
+  <div class="gambar-grid">
+    <div class="gambar-item">
+      <img src="D:\Mat10\images.png" alt="Bentuk Dasar Jajar Genjang">
+      <div class="caption">Bentuk Dasar</div>
+    </div>
+    <div class="gambar-item">
+      <img src="D:\Mat10\Wajik.jpg" alt="Kue Wajik">
+      <div class="caption">Kue Wajik</div>
+    </div>
+    <div class="gambar-item">
+      <img src="D:\Mat10\Tenda Pramuka.png" alt="Atap Tenda">
+      <div class="caption">Atap Tenda</div>
+    </div>
+    <div class="gambar-item">
+      <img src="D:\Mat10\Karya Seni.png" alt="Karya Seni">
+      <div class="caption">Karya Seni</div>
+    </div>
+  </div>
+</div>
+
+<!-- === VIDEO PEMBELAJARAN === -->
+<h3>🎥 Video Pembelajaran</h3>
+<div class="video-section">
+  <p class="video-desc">
+    Yuk tonton video ini untuk memahami cara menghitung <strong>keliling</strong> dan <strong>luas jajar genjang</strong> dengan cara yang seru dan mudah! 🎬✨
+  </p>
+  <div class="video-box">
+    <iframe src="D:\Mat10\MI.mp4" title="Video Jajar Genjang" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+<!-- === ALAT BANTU INTERAKTIF === -->
+<h3>🧮 Alat Bantu Interaktif Menghitung Luas & Keliling</h3>
+<div id="interactive-area">
+  <p class="alat-desc">
+    Masukkan panjang <strong>alas</strong>, <strong>tinggi</strong>, dan <strong>sisi miring</strong> (cm), lalu klik tombol di bawah untuk melihat hasilnya! 🎨✨
+  </p>
+
+  <div class="controls">
+    <label>Alas: <input type="number" id="alas" value="6" min="1"></label>
+    <label>Tinggi: <input type="number" id="tinggi" value="4" min="1"></label>
+    <label>Sisi Miring: <input type="number" id="miring" value="5" min="1"></label>
+    <button onclick="drawParallelogram()">🔹 Tampilkan</button>
+  </div>
+
+  <canvas id="canvas" width="420" height="300"></canvas>
+  <div class="result-box" id="luasKeliling"></div>
+</div>
+
+<!-- === STYLE TAMBAHAN UNTUK VIDEO, GAMBAR, DAN ALAT BANTU === -->
+<style>
+/* ==== VIDEO === */
+.video-section {
+  text-align: center;
+  margin: 40px 0;
+  animation: fadeIn 1s ease;
+}
+.video-desc {
+  color: #1565c0;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.video-box {
+  background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+.video-box iframe {
+  width: 700px;
+  height: 400px;
+  border-radius: 12px;
+  border: none;
+}
+@media (max-width: 768px) {
+  .video-box iframe { width: 90%; height: 250px; }
+}
+
+/* ==== CONTOH GAMBAR === */
+.contoh-section {
+  text-align: center;
+  margin: 50px 0;
+  animation: fadeIn 1s ease;
+}
+.caption-intro {
+  color: #1565c0;
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+.gambar-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+.gambar-item {
+  background: #e3f2fd;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+}
+.gambar-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+.gambar-item img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.caption {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0d47a1;
+}
+@media (max-width: 768px) {
+  .gambar-item { width: 45%; }
+}
+@media (max-width: 500px) {
+  .gambar-item { width: 80%; }
+}
+
+/* ==== ALAT BANTU INTERAKTIF === */
+#interactive-area {
+  text-align: center;
+  margin: 50px auto;
+  background: #e3f2fd;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  max-width: 600px;
+  animation: fadeIn 1s ease;
+}
+.alat-desc {
+  font-size: 1rem;
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+.controls {
+  margin-bottom: 15px;
+}
+.controls label {
+  margin: 0 10px;
+  font-weight: 600;
+  color: #1565c0;
+}
+.controls input[type=number] {
+  width: 60px;
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.controls button {
+  padding: 6px 12px;
+  background: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 8px;
+  transition: 0.3s;
+}
+.controls button:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+#canvas {
+  border: 2px dashed #1565c0;
+  background: #bbdefb;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.result-box {
+  margin-top: 12px;
+  background: #fff9c4;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: bold;
+  color: #0d47a1;
+}
+
+/* ==== ANIMASI === */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
+<!-- === SCRIPT INTERAKTIF === -->
+<script>
+function drawParallelogram() {
+  const alas = parseFloat(document.getElementById('alas').value);
+  const tinggi = parseFloat(document.getElementById('tinggi').value);
+  const miring = parseFloat(document.getElementById('miring').value);
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  const scale = 20;
+  const x0 = 60, y0 = 60;
+  const x1 = x0, y1 = y0;
+  const x2 = x0 + alas*scale, y2 = y0;
+  const x3 = x0 + alas*scale + (miring*scale/3), y3 = y0 + tinggi*scale;
+  const x4 = x0 + (miring*scale/3), y4 = y0 + tinggi*scale;
+
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  ctx.lineTo(x2,y2);
+  ctx.lineTo(x3,y3);
+  ctx.lineTo(x4,y4);
+  ctx.closePath();
+  ctx.fillStyle = '#90caf9';
+  ctx.fill();
+  ctx.strokeStyle = '#1565c0';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // garis tinggi
+  ctx.beginPath();
+  ctx.setLineDash([5,3]);
+  ctx.moveTo(x2,y2);
+  ctx.lineTo(x2, y2 + tinggi*scale);
+  ctx.strokeStyle = '#ff5252';
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // label teks
+  ctx.fillStyle = '#0d47a1';
+  ctx.font = '14px Poppins';
+  ctx.fillText(alas + ' cm', (x1+x2)/2 -10, y1 -5);
+  ctx.fillText(tinggi + ' cm', x2 + 5, (y2 + y3)/2);
+  ctx.fillText(miring + ' cm', (x2+x3)/2, (y2+y3)/2 + 20);
+
+  // hitung hasil
+  const luas = alas * tinggi;
+  const keliling = 2 * (alas + miring);
+  document.getElementById('luasKeliling').textContent = `Luas = ${luas} cm² | Keliling = ${keliling} cm`;
+}
+</script>
+
+<style>
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f0f8ff;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header-lkpd {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.header-lkpd .judul {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1565c0;
+}
+
+.header-lkpd .sub {
+  font-size: 14px;
+  color: #333;
+}
+
+.section h4 {
+  margin: 10px 0 5px;
+}
+
+.group-member {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.group-member input {
+  border: none;
+  border-bottom: 2px solid #1565c0;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  background: #e3f2fd;
+}
+
+.group-member input:focus {
+  outline: none;
+  border-bottom: 2px solid #ff7043;
+  background: #fff3e0;
+}
+
+textarea {
+  width: 100%;
+  min-height: 60px;
+  border: none;
+  border-bottom: 2px dashed #1565c0;
+  padding: 5px 10px;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+
+.pembahasan {
+  display: none;
+  background: #fff8e1;
+  padding: 5px 10px;
+  border-left: 4px solid #ffca28;
+  margin-bottom: 10px;
+}
+
+.pembahasan.show {
+  display: block;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+button.btn-check, button.btn-reset {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button.btn-check {
+  background: #4caf50;
+}
+
+button.btn-check:hover {
+  background: #388e3c;
+}
+
+button.btn-reset {
+  background: #f44336;
+}
+
+button.btn-reset:hover {
+  background: #d32f2f;
+}
+</style>
+
+<!-- ==== LKPD 1 START ==== -->
+<div class="card">
+  <header class="header-lkpd">
+    <div class="logo">LKPD 1</div>
+    <div class="header-content">
+      <div class="judul">LEMBAR KERJA PESERTA DIDIK</div>
+      <div class="sub">Tujuan Pembelajaran: Peserta didik dapat menentukan keliling jajar genjang dengan tepat (C3)</div>
+      <div class="sub">KELAS 5 | SEKOLAH DASAR</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h4>Petunjuk Pengerjaan:</h4>
+    <ul>
+      <li>Isi nama anggota kelompok pada kolom di bawah.</li>
+      <li>Baca setiap soal dengan teliti.</li>
+      <li>Tuliskan jawaban kalian pada kotak jawaban.</li>
+      <li>Tekan tombol ✅ Periksa Jawaban untuk melihat pembahasan.</li>
+      <li>Gunakan tombol 🔄 Ulangi untuk menghapus jawaban.</li>
+    </ul>
+
+    <h4>Nama Kelompok :</h4>
+    <div class="group-member">
+      <input type="text" placeholder="1. ................................................................">
+      <input type="text" placeholder="2. ................................................................">
+      <input type="text" placeholder="3. ................................................................">
+      <input type="text" placeholder="4. ................................................................">
+      <input type="text" placeholder="5. ................................................................">
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>KEGIATAN</h3>
+
+    <label>Soal 1 :</label>
+    <h4>Sebuah jajar genjang memiliki panjang sisi 8 cm dan 5 cm. Hitung keliling jajar genjang tersebut!</h4>
+    <textarea id="jawab1-lkpd1" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan1-lkpd1">K=2×(8+5)=26 cm</div>
+
+    <label>Soal 2 :</label>
+    <h4>Jajar genjang ABCD memiliki panjang AB = 12 cm dan AD = 7 cm. Tentukan keliling jajar genjang ABCD!</h4>
+    <textarea id="jawab2-lkpd1" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan2-lkpd1">K=2×(12+7)=38 cm</div>
+
+    <label>Soal 3 :</label>
+    <h4>Panjang sisi sebuah jajar genjang adalah 9 cm dan 6 cm. Hitung keliling jajar genjang tersebut.</h4>
+    <textarea id="jawab3-lkpd1" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan3-lkpd1">K=2×(9+6)=30 cm</div>
+
+    <div class="actions">
+      <button class="btn-check" onclick="periksaJawabanLKPD1()">✅ Periksa Jawaban</button>
+      <button class="btn-reset" onclick="ulangJawabanLKPD1()">🔄 Ulangi</button>
+    </div>
+    <div id="nilai-lkpd1" style="text-align:center; font-weight:bold; color:#1565c0; margin-top:10px;"></div>
+  </section>
+</div>
+<!-- ==== LKPD 1 END ==== -->
+
+<!-- ==== LKPD 2 START ==== -->
+<div class="card">
+  <header class="header-lkpd">
+    <div class="logo">LKPD 2</div>
+    <div class="header-content">
+      <div class="judul">LEMBAR KERJA PESERTA DIDIK</div>
+      <div class="sub">Tujuan Pembelajaran: Peserta didik dapat menentukan luas jajar genjang dengan tepat (C3)</div>
+      <div class="sub">KELAS 5 | SEKOLAH DASAR</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h4>Petunjuk Pengerjaan:</h4>
+    <ul>
+      <li>Isi nama anggota kelompok pada kolom di bawah.</li>
+      <li>Baca setiap soal dengan teliti.</li>
+      <li>Tuliskan jawaban kalian pada kotak jawaban.</li>
+      <li>Tekan tombol ✅ Periksa Jawaban untuk melihat pembahasan.</li>
+      <li>Gunakan tombol 🔄 Ulangi untuk menghapus jawaban.</li>
+    </ul>
+
+    <h4>Nama Kelompok :</h4>
+    <div class="group-member">
+      <input type="text" placeholder="1. ................................................................">
+      <input type="text" placeholder="2. ................................................................">
+      <input type="text" placeholder="3. ................................................................">
+      <input type="text" placeholder="4. ................................................................">
+      <input type="text" placeholder="5. ................................................................">
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>KEGIATAN</h3>
+
+    <label>Soal 1 :</label>
+    <h4>Sebuah jajar genjang memiliki alas 10 cm dan tinggi 6 cm. Hitung luas jajar genjang tersebut!</h4>
+    <textarea id="jawab1-lkpd2" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan1-lkpd2">L=10×6=60 cm²</div>
+
+    <label>Soal 2 :</label>
+    <h4>Jajar genjang ABCD memiliki alas 8 cm dan tinggi 5 cm. Tentukan luas jajar genjang ABCD!</h4>
+    <textarea id="jawab2-lkpd2" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan2-lkpd2">L=8×5=40 cm²</div>
+
+    <label>Soal 3 :</label>
+    <h4>Sebuah jajar genjang memiliki alas 12 cm dan tinggi 7 cm. Hitung luas jajar genjang tersebut.</h4>
+    <textarea id="jawab3-lkpd2" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan3-lkpd2">L=12×7=84 cm²</div>
+
+    <div class="actions">
+      <button class="btn-check" onclick="periksaJawabanLKPD2()">✅ Periksa Jawaban</button>
+      <button class="btn-reset" onclick="ulangJawabanLKPD2()">🔄 Ulangi</button>
+    </div>
+    <div id="nilai-lkpd2" style="text-align:center; font-weight:bold; color:#1565c0; margin-top:10px;"></div>
+  </section>
+</div>
+<!-- ==== LKPD 2 END ==== -->
+
+<!-- ==== LKPD 3 START ==== -->
+<div class="card">
+  <header class="header-lkpd">
+    <div class="logo">LKPD 3</div>
+    <div class="header-content">
+      <div class="judul">LEMBAR KERJA PESERTA DIDIK</div>
+      <div class="sub">Tujuan Pembelajaran: Peserta didik dapat memecahkan masalah dari keliling dan luas jajar genjang melalui soal cerita (C4)</div>
+      <div class="sub">KELAS 5 | SEKOLAH DASAR</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h4>Petunjuk Pengerjaan:</h4>
+    <ul>
+      <li>Isi nama anggota kelompok pada kolom di bawah.</li>
+      <li>Baca setiap soal dengan teliti.</li>
+      <li>Tuliskan jawaban kalian pada kotak jawaban.</li>
+      <li>Tekan tombol ✅ Periksa Jawaban untuk melihat pembahasan.</li>
+      <li>Gunakan tombol 🔄 Ulangi untuk menghapus jawaban.</li>
+    </ul>
+
+    <h4>Nama Kelompok :</h4>
+    <div class="group-member">
+      <input type="text" placeholder="1. ................................................................">
+      <input type="text" placeholder="2. ................................................................">
+      <input type="text" placeholder="3. ................................................................">
+      <input type="text" placeholder="4. ................................................................">
+      <input type="text" placeholder="5. ................................................................">
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>KEGIATAN</h3>
+
+    <label>Soal 1 :</label>
+    <h4>Pak Budi ingin membuat taman berbentuk jajar genjang dengan panjang sisi 15 m dan 10 m. Hitung berapa meter pagar yang dibutuhkan untuk mengelilingi taman tersebut.</h4>
+    <textarea id="jawab1-lkpd3" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan1-lkpd3">Keliling = 2 × (15+10) = 50 m</div>
+
+    <label>Soal 2 :</label>
+    <h4>Sebuah bidang persegi panjang dimodifikasi menjadi jajar genjang dengan alas 12 cm dan tinggi 8 cm. Tentukan luas jajar genjang tersebut.</h4>
+    <textarea id="jawab2-lkpd3" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan2-lkpd3">L = 12 × 8 = 96 cm²</div>
+
+    <label>Soal 3 :</label>
+    <h4>Sebuah kolam berbentuk jajar genjang memiliki panjang sisi 20 m dan 12 m, dengan tinggi 6 m. Hitung keliling dan luas kolam.</h4>
+    <textarea id="jawab3-lkpd3" placeholder="Tuliskan jawaban di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan3-lkpd3">
+      Keliling = 2 × (20+12) = 64 m <br>
+      Luas = 20 × 6 = 120 m²
+    </div>
+
+    <div class="actions">
+      <button class="btn-check" onclick="periksaJawabanLKPD3()">✅ Periksa Jawaban</button>
+      <button class="btn-reset" onclick="ulangJawabanLKPD3()">🔄 Ulangi</button>
+    </div>
+    <div id="nilai-lkpd3" style="text-align:center; font-weight:bold; color:#1565c0; margin-top:10px;"></div>
+  </section>
+</div>
+<!-- ==== LKPD 3 END ==== -->
+
+<script>
+// ===== LKPD 1 =====
+const kunciJawabanLKPD1 = {1:"26",2:"38",3:"30"};
+function periksaJawabanLKPD1(){
+  let total=0;
+  for(let i=1;i<=3;i++){
+    document.getElementById(`pembahasan${i}-lkpd1`).classList.add('show');
+    let jawaban=document.getElementById(`jawab${i}-lkpd1`).value.replace(/\s/g,'');
+    let kunci=kunciJawabanLKPD1[i].replace(/\s/g,'');
+    if(jawaban===kunci) total+=33;
+  }
+  if(total>100) total=100;
+  document.getElementById('nilai-lkpd1').innerHTML=`🎯 Total Nilai: ${total}/100`;
+}
+function ulangJawabanLKPD1(){
+  for(let i=1;i<=3;i++){
+    document.getElementById(`jawab${i}-lkpd1`).value='';
+    document.getElementById(`pembahasan${i}-lkpd1`).classList.remove('show');
+  }
+  document.getElementById('nilai-lkpd1').innerHTML='';
+}
+
+// ===== LKPD 2 =====
+const kunciJawabanLKPD2 = {1:"60",2:"40",3:"84"};
+function periksaJawabanLKPD2(){
+  let total=0;
+  for(let i=1;i<=3;i++){
+    document.getElementById(`pembahasan${i}-lkpd2`).classList.add('show');
+    let jawaban=document.getElementById(`jawab${i}-lkpd2`).value.replace(/\s/g,'');
+    let kunci=kunciJawabanLKPD2[i].replace(/\s/g,'');
+    if(jawaban===kunci) total+=33;
+  }
+  if(total>100) total=100;
+  document.getElementById('nilai-lkpd2').innerHTML=`🎯 Total Nilai: ${total}/100`;
+}
+function ulangJawabanLKPD2(){
+  for(let i=1;i<=3;i++){
+    document.getElementById(`jawab${i}-lkpd2`).value='';
+    document.getElementById(`pembahasan${i}-lkpd2`).classList.remove('show');
+  }
+  document.getElementById('nilai-lkpd2').innerHTML='';
+}
+
+// ===== LKPD 3 =====
+const kunciJawabanLKPD3 = {1:"50",2:"96",3:"Keliling:64,Luas:120"};
+function periksaJawabanLKPD3(){
+  let total=0;
+  for(let i=1;i<=3;i++){
+    document.getElementById(`pembahasan${i}-lkpd3`).classList.add('show');
+    let jawaban=document.getElementById(`jawab${i}-lkpd3`).value.replace(/\s/g,'');
+    if(i<3){
+      let kunci=i===1?"50":"96";
+      if(jawaban===kunci) total+=33;
+    } else {
+      if(jawaban.includes("64") && jawaban.includes("120")) total+=34;
+    }
+  }
+  if(total>100) total=100;
+  document.getElementById('nilai-lkpd3').innerHTML=`🎯 Total Nilai: ${total}/100`;
+}
+function ulangJawabanLKPD3(){
+  for(let i=1;i<=3;i++){
+    document.getElementById(`jawab${i}-lkpd3`).value='';
+    document.getElementById(`pembahasan${i}-lkpd3`).classList.remove('show');
+  }
+  document.getElementById('nilai-lkpd3').innerHTML='';
+}
+</script>
+
+<script>
+function drawParallelogram() {
+  const alas = parseFloat(document.getElementById('alas').value);
+  const tinggi = parseFloat(document.getElementById('tinggi').value);
+  const miring = parseFloat(document.getElementById('miring').value);
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  const scale = 30;
+  const x0 = 50, y0 = 50;
+
+  const x1 = x0, y1 = y0;
+  const x2 = x0 + alas*scale, y2 = y0;
+  const x3 = x0 + alas*scale + (miring*scale/2), y3 = y0 + tinggi*scale;
+  const x4 = x0 + (miring*scale/2), y4 = y0 + tinggi*scale;
+
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  ctx.lineTo(x2,y2);
+  ctx.lineTo(x3,y3);
+  ctx.lineTo(x4,y4);
+  ctx.closePath();
+  ctx.fillStyle = '#90caf9';
+  ctx.fill();
+  ctx.strokeStyle = '#1565c0';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.setLineDash([5,3]);
+  ctx.moveTo(x2,y2);
+  ctx.lineTo(x2, y2 + tinggi*scale);
+  ctx.strokeStyle = '#ff5252';
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.fillStyle = 'black';
+  ctx.font = '16px Poppins';
+  ctx.fillText(alas + ' cm', (x1+x2)/2 -10, y1 -5);
+  ctx.fillText(tinggi + ' cm', x2 + 5, (y2 + y3)/2);
+  ctx.fillText(miring + ' cm', (x2+x3)/2 +5, (y2+y3)/2 +20);
+
+  const luas = alas * tinggi;
+  const keliling = 2 * (alas + miring);
+  document.getElementById('luasKeliling').textContent = `Luas = ${luas} cm², Keliling = ${keliling} cm`;
+}
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Beranda - KPK & Jajar Genjang</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    :root{
+      --primary:#1565c0;
+      --primary-light:#64b5f6;
+      --accent:#ffb74d;
+      --muted:#666;
+      --card:#fff;
+      --bg:#f0f4f8;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #111;
+      background: linear-gradient(120deg, #a6c0fe, #f68084);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientMove {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    header {
+      background: linear-gradient(90deg, rgba(21,101,192,0.7), rgba(100,181,246,0.7)),
+                  url('img/math-header.png') no-repeat center/cover;
+      color: #fff;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+      animation: glowText 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      0% { text-shadow: 2px 2px 6px rgba(0,0,0,0.5), 0 0 5px #64b5f6; }
+      100% { text-shadow: 2px 2px 6px rgba(0,0,0,0.5), 0 0 20px #64b5f6; }
+    }
+
+    header h3{
+      margin:8px 0 10px;
+      font-weight:500;
+    }
+
+    header p{
+      margin:10px 0 20px;
+      font-size:1rem;
+    }
+
+    nav {
+      margin-top: -10px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 5%;
+      border-bottom: 4px solid #0d47a1;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      border-radius: 0 0 15px 15px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav ul li a:hover {
+      background: linear-gradient(90deg, #64b5f6, #81c784);
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    nav ul li a.active {
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .container{
+      max-width:960px;
+      margin:auto;
+      padding:16px;
+    }
+
+    main{
+      background:var(--card);
+      padding:24px;
+      border-radius:16px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      position:relative;
+      overflow:hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    main:hover{
+      transform: translateY(-5px);
+      box-shadow:0 14px 28px rgba(0,0,0,0.15);
+    }
+
+    /* === SLIDESHOW RESPONSIF === */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 16px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 0 4px;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: var(--primary);
+    }
+
+    .identitas {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      padding: 15px 20px;
+      border-radius: 15px;
+      margin: 15px 0;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      animation: slideUp 0.6s ease forwards;
+    }
+
+    .identitas img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 18px;
+      border: 3px solid #64b5f6;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:20px;
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Pengembangan Pembelajaran Matematika SD</h1>
+      <h3>Dosen Pengampu : Dr. Dyah Triwahyuningtyas, S.Si., M.Pd.</h3>
+      <p>Kelompok : <strong>Matematika 10</strong> | Kelas <strong>D2023</strong> | Materi Bilangan: <strong>KPK</strong> | Materi Geometri: <strong>Jajar Genjang</strong></p>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="Index.html" class="active">🏠 Beranda</a></li>
+      <li><a href="Materi KPK.html">🔢 Materi Bilangan</a></li>
+      <li><a href="Materi Geometri.html">📐 Materi Geometri</a></li>
+      <li><a href="Kuis.html">🧩 Kuis Bilangan</a></li>
+      <li><a href="Kuis Geometri.html">⚡ Kuis Geometri</a></li>
+      <li><a href="Evaluasi.html">✅ Evaluasi Bilangan</a></li>
+      <li><a href="Evaluasi Geometri.html">🏅 Evaluasi Geometri</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <main>
+      <h2>Selamat Datang di Website Pembelajaran Matematika!</h2>
+
+      <!-- === SLIDESHOW FOTO BERGESER KIRI === -->
+      <div class="slideshow-container">
+        <div class="slides" id="slides">
+          <img src="D:/Mat10/Kids Classroom Google Classroom Header.png" alt="Slide 1">
+          <img src="D:/Mat10/Slide 2.png" alt="Slide 2">
+          <img src="D:/Mat10/Slide 3.png" alt="Slide 3">
+          <!-- salinan pertama untuk looping mulus -->
+          <img src="D:/Mat10/Kids Classroom Google Classroom Header.png" alt="Slide 1 Clone">
+        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+
+      <p>Website ini membantu siswa kelas 5 memahami <strong>KPK</strong> serta <strong>Keliling dan Luas Jajar Genjang</strong> melalui materi teks, video pembelajaran, dan LKPD interaktif.</p>
+
+      <h3>Profil Kelompok</h3>
+      <div class="identitas">
+        <img src="D:/Mat10/Yolanda.jpg" alt="Yolanda">
+        <ul><li><strong>Nama:</strong> Yolanda Devinta Olga Popilaya</li><li><strong>NIM:</strong> 230401140115</li></ul>
+      </div>
+
+      <div class="identitas">
+        <img src="D:/Mat10/Hanin.jpg" alt="Hanin">
+        <ul><li><strong>Nama:</strong> Hanindia Nisrina Putri</li><li><strong>NIM:</strong> 230401140113</li></ul>
+      </div>
+
+      <div class="identitas">
+        <img src="D:/Mat10/Nazil.jpg" alt="Nazil">
+        <ul><li><strong>Nama:</strong> Nazil Safia Sakti</li><li><strong>NIM:</strong> 230401140116</li></ul>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 — Kelompok Matematika 10 D2023 | Musik latar: 
+      <a href="https://www.bensound.com/royalty-free-music/track/buddy" target="_blank">Bensound - Buddy</a>
+    </footer>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung audio.
+  </audio>
+
+  <script>
+    const slides = document.getElementById("slides");
+    const dots = document.querySelectorAll(".dot");
+    const totalSlides = dots.length;
+    let index = 0;
+
+    function showSlide(n) {
+      slides.style.transition = "transform 1s ease-in-out";
+      slides.style.transform = `translateX(-${n * 100}%)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[n % totalSlides].classList.add("active");
+    }
+
+    function nextSlide() {
+      index++;
+      showSlide(index);
+
+      // jika sudah sampai di slide kloning (slide ke-3 asli + 1 kloning)
+      if (index === totalSlides) {
+        setTimeout(() => {
+          slides.style.transition = "none";
+          slides.style.transform = "translateX(0)";
+          index = 0;
+        }, 1000); // waktu harus sama dengan transition
+      }
+    }
+
+    setInterval(nextSlide, 4000);
+
+    function currentSlide(n) {
+      index = n;
+      showSlide(index);
+    }
+  </script>
+</body>
+</html>

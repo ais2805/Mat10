@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluasi Jajar Genjang</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<style>
+:root{
+  --accent:#1565c0;
+  --accent-light:#64b5f6;
+  --bg:#f4f7fb;
+}
+body {
+  font-family:"Poppins",sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:#222;
+}
+
+/* === HEADER === */
+header {
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  color:white;
+  text-align:center;
+  padding:30px 20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+header h1 {margin:0;font-size:2rem;}
+header p {margin:10px 0 0;font-size:1rem;}
+
+/* === NAVBAR === */
+nav {
+  background:linear-gradient(90deg,var(--accent),var(--accent-light));
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  padding:10px 5%;
+  border-bottom:4px solid #0d47a1;
+  box-shadow:0 3px 6px rgba(0,0,0,0.1);
+}
+nav ul {
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin:0;
+  padding:0;
+}
+nav ul li a {
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+  padding:8px 16px;
+  border-radius:12px;
+  transition:0.3s;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+nav ul li a:hover {
+  background:rgba(255,255,255,0.25);
+  transform:scale(1.08);
+}
+nav ul li a.active {
+  background:#fff;
+  color:var(--accent);
+  font-weight:700;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* === CONTAINER === */
+.container {
+  max-width:900px;
+  margin:30px auto;
+  padding:20px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+h2,h3{color:var(--accent);text-align:center;}
+
+/* === QUIZ AREA === */
+.quiz-item {margin-bottom:25px;text-align:left;}
+.quiz-item textarea {
+  width:100%;
+  min-height:90px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  padding:8px;
+  font-size:14px;
+  background:repeating-linear-gradient(white,white 22px,#ccc 23px);
+  line-height:22px;
+}
+.feedback {
+  margin-top:8px;
+  padding:8px;
+  border-radius:6px;
+  font-style:italic;
+  display:none;
+}
+.feedback.correct {background:#e8f5e9;border-left:4px solid #43a047;color:#1b5e20;}
+.feedback.wrong {background:#fff3e0;border-left:4px solid #f57c00;color:#e65100;}
+
+/* === BUTTONS === */
+button {
+  padding:10px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+  margin:5px;
+}
+.save-btn {background:#1e88e5;color:white;}
+.save-btn:hover {background:#1565c0;}
+.print-btn {background:#43a047;color:white;}
+.print-btn:hover {background:#2e7d32;}
+.check-btn {background:#fbc02d;color:#212121;}
+.check-btn:hover {background:#f9a825;}
+
+.score-box {
+  text-align:center;
+  font-size:18px;
+  font-weight:bold;
+  margin-top:20px;
+}
+
+@media print {
+  nav,header,.save-btn,.print-btn,.check-btn {display:none;}
+  body {background:white;}
+  .container {box-shadow:none;}
+}
+@media(max-width:768px){
+  nav ul{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- === HEADER === -->
+<header>
+  <h1>Evaluasi Materi Jajar Genjang</h1>
+  <p>Uji pemahamanmu tentang keliling dan luas jajar genjang 💪</p>
+</header>
+
+<!-- === NAVIGASI === -->
+<nav>
+  <ul>
+    <li><a href="Index.html">🏠 Beranda</a></li>
+    <li><a href="Materi KPK.html">🔢 Materi Bilangan</a></li>
+    <li><a href="Materi Geometri.html">📐 Materi Geometri</a></li>
+    <li><a href="Kuis.html">🧩 Kuis Bilangan</a></li>
+    <li><a href="Kuis Geometri.html">⚡ Kuis Geometri</a></li>
+    <li><a href="Evaluasi.html">✅ Evaluasi Bilangan</a></li>
+    <li><a href="Evaluasi Geometri.html" class="active">🏅 Evaluasi Geometri</a></li>
+  </ul>
+</nav>
+
+<!-- === SCRIPT ACTIVE NAV === -->
+<script>
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll("nav ul li a").forEach(link=>{
+    if(link.getAttribute("href")===currentPage){
+      link.classList.add("active");
+    }
+  });
+</script>
+
+<div class="container" style="background: linear-gradient(135deg, #bbdefb, #64b5f6); border: 2px dashed #1565c0; max-width:400px; padding:15px; margin:20px auto;">
+  <h2 style="text-align:center; color:#0d47a1; font-size:18px;">🎈 Identitas Peserta Didik 🎈</h2>
+  <div class="quiz-item">
+    <label for="nama" style="font-weight:bold; font-size:14px;">👧 Nama:</label>
+    <input type="text" id="nama" name="nama" placeholder="Namamu ✏️" 
+           style="width:90%; padding:6px; margin-top:5px; margin-bottom:10px; border-radius:8px; border:2px solid #0d47a1; font-size:13px; background:#e3f2fd;">
+  </div>
+  <div class="quiz-item">
+    <label for="absen" style="font-weight:bold; font-size:14px;">🧑 Nomor Absen:</label>
+    <input type="number" id="absen" name="absen" placeholder="Absen 🔢" 
+           style="width:90%; padding:6px; margin-top:5px; margin-bottom:10px; border-radius:8px; border:2px solid #1565c0; font-size:13px; background:#bbdefb;">
+  </div>
+</div>
+
+<!-- === PETUNJUK PENGERJAAN (Versi Menarik) === -->
+<div class="container">
+  <h2>🎯 Petunjuk Pengerjaan Evaluasi</h2>
+  <div class="card-petunjuk">
+    <ul>
+      <li>👧 <strong>Bacalah setiap soal dengan teliti</strong> sebelum menjawab!</li>
+      <li>🖊️ Tulis jawabanmu pada kolom yang sudah disediakan dengan rapi.</li>
+      <li>✅ Setelah selesai, klik tombol <strong>Cek Nilai</strong> untuk melihat hasilmu.</li>
+      <li>💾 Kamu juga bisa <strong>Menyimpan Jawaban</strong> untuk dikumpulkan ke guru.</li>
+      <li>📘 Jika ada soal yang belum dipahami, baca kembali materi di menu atas ya!</li>
+      <li>✨ Ingat, yang terpenting adalah berusaha dan jujur saat mengerjakan 💪</li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container">
+<h3>Selamat Mengerjakan! 💫</h3>
+
+<form id="quizForm">
+
+<!-- === Soal 1 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>1. Sebuah jajar genjang memiliki panjang sisi alas 12 cm dan sisi miring 8 cm. Hitung keliling jajar genjang tersebut!</strong></p>
+  <img src="D:\Mat10\Geo 1.png" alt="Jajar genjang soal 1" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal1" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 2 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>2. Jajar genjang memiliki panjang alas 15 cm dan sisi miring 10 cm. Berapakah kelilingnya?</strong></p>
+  <img src="D:\Mat10\Geo 2.png" alt="Jajar genjang soal 2" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal2" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 3 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>3. Panjang sisi alas jajar genjang 9 cm dan sisi miringnya 6 cm. Tentukan keliling jajar genjang!</strong></p>
+  <img src="D:\Mat10\Geo 3.png" alt="Jajar genjang soal 3" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal3" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 4 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>4. Jajar genjang memiliki alas 10 cm dan tinggi 7 cm. Hitung luasnya!</strong></p>
+  <img src="D:\Mat10\Geo 4.png" alt="Jajar genjang soal 4" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal4" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 5 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>5. Sebuah jajar genjang memiliki alas 12 cm dan tinggi 8 cm. Tentukan luas jajar genjang tersebut!</strong></p>
+  <img src="D:\Mat10\Geo 5.png" alt="Jajar genjang soal 5" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal5" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 6 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>6. Panjang alas jajar genjang adalah 14 cm dan tinggi 5 cm. Berapakah luasnya?</strong></p>
+  <img src="D:\Mat10\Geo 6.png" alt="Jajar genjang soal 6" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal6" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 7 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>7. Safia memiliki lahan berbentuk jajar genjang dengan alas 20 meter dan sisi miring 15 meter. Jika Safia ingin memasang pagar di sekeliling lahannya, berapa panjang pagar yang dibutuhkan?</strong></p>
+  <img src="D:\Mat10\Geo 8.png" alt="Jajar genjang soal 7" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal7" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 8 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>8. Sebuah taman berbentuk jajar genjang memiliki panjang alas 18 meter dan tinggi 12 meter. Hitung luas taman tersebut agar bisa mengetahui berapa banyak rumput yang dibutuhkan untuk menutup seluruh taman.</strong></p>
+  <img src="D:\Mat10\Geo 7.png" alt="Jajar genjang soal 8" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal8" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 9 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>9. Lahan sekolah berbentuk jajar genjang memiliki alas 25 meter dan tinggi 10 meter. Jika sisi miring jajar genjang tersebut 15 meter, hitung keliling dan luas lahan sekolah tersebut!</strong></p>
+  <img src="D:\Mat10\Geo 9.png" alt="Jajar genjang soal 9" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal9" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+<!-- === Soal 10 dengan gambar === -->
+<div class="quiz-item">
+  <p><strong>10. Sebuah atap rumah berbentuk jajar genjang memiliki panjang alas 8 meter, tinggi 4 meter, dan sisi miring 5 meter. Tentukan keliling dan luas atap rumah tersebut!</strong></p>
+  <img src="D:\Mat10\Geo 10.png" alt="Jajar genjang soal 10" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+  <textarea name="soal10" placeholder="Tuliskan jawaban di sini ..."></textarea>
+  <div class="feedback"></div>
+</div>
+
+
+<div style="text-align:center;">
+  <button type="button" class="check-btn" onclick="checkAnswers()">✅ Cek Nilai</button>
+  <button type="button" class="save-btn" onclick="saveAnswers()">💾 Simpan Jawaban</button>
+  <button type="button" class="print-btn" onclick="window.print()">🖨️ Cetak</button>
+</div>
+</form>
+
+<div class="score-box" id="scoreBox"></div>
+</div>
+
+<script>
+const answers = {
+  soal1:{correct:["40","40cm"],pembahasan:"Keliling = 2 × (12 + 8) = 40 cm"},
+  soal2:{correct:["50","50cm"],pembahasan:"Keliling = 2 × (15 + 10) = 50 cm"},
+  soal3:{correct:["30","30cm"],pembahasan:"Keliling = 2 × (9 + 6) = 30 cm"},
+  soal4:{correct:["70","70cm2"],pembahasan:"Luas = alas × tinggi = 10 × 7 = 70 cm²"},
+  soal5:{correct:["96","96cm2"],pembahasan:"Luas = alas × tinggi = 12 × 8 = 96 cm²"},
+  soal6:{correct:["70","70cm2"],pembahasan:"Luas = alas × tinggi = 14 × 5 = 70 cm²"},
+  soal7:{correct:["70","70m"],pembahasan:"Keliling = 2 × (20 + 15) = 70 m"},
+  soal8:{correct:["216","216m2"],pembahasan:"Luas = alas × tinggi = 18 × 12 = 216 m²"},
+  soal9:{correct:["80","80m","250","250m2"],pembahasan:"Keliling = 2 × (25 + 15) = 80 m; Luas = 25 × 10 = 250 m²"},
+  soal10:{correct:["26","26m","32","32m2"],pembahasan:"Keliling = 2 × (8 + 5) = 26 m; Luas = 8 × 4 = 32 m²"}
+};
+const pujian=["🌟 Hebat sekali!","🎉 Luar biasa!","💪 Keren, terus pertahankan!","👏 Mantap, kamu paham konsepnya!"];
+const semangat=["💪 Ayo semangat belajar lagi!","✨ Jangan menyerah, kamu pasti bisa!","🔥 Coba ulangi lagi ya!","📘 Pelajari kembali pembahasan di atas!"];
+
+function normalize(t){return t.toLowerCase().replace(/\s+/g,"").replace(/[^0-9a-z]/g,"");}
+function checkAnswers(){
+  let score=0,total=10;
+  document.querySelectorAll('.feedback').forEach(f=>f.style.display='none');
+  for(const key in answers){
+    const ta=document.querySelector(`[name="${key}"]`);
+    const fb=ta.nextElementSibling;
+    const user=normalize(ta.value);
+    if(answers[key].correct.some(ans=>user.includes(normalize(ans)))){
+      score++;fb.className="feedback correct";
+      fb.textContent=pujian[Math.floor(Math.random()*pujian.length)];
+    }else{
+      fb.className="feedback wrong";
+      fb.innerHTML=`❌ Jawaban kurang tepat. ${answers[key].pembahasan} ${semangat[Math.floor(Math.random()*semangat.length)]}`;
+    }
+    fb.style.display='block';
+  }
+  const nilai=(score/total)*100;
+  document.getElementById("scoreBox").innerHTML=`✅ Benar: ${score} | ❌ Salah: ${total-score}<br>Nilai Akhir: <span style="color:#1e88e5;">${nilai.toFixed(0)}</span>`;
+}
+function saveAnswers(){
+  const data={};
+  new FormData(document.getElementById('quizForm')).forEach((v,k)=>data[k]=v);
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='Jawaban_Evaluasi_JajarGenjang.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  alert("✅ Jawaban berhasil disimpan!");
+}
+</script>
+</div>
+</body>
+</html>

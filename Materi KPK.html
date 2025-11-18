@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materi KPK & LKPD Interaktif</title>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<style>
+:root{
+  --accent:#1565c0;
+  --accent-light:#64b5f6;
+  --muted:#666;
+  --card:#fff;
+  --bg:#f4f7fb;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  color: #111;
+  background: url("img/Background MTK.webp") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Overlay lembut agar teks tetap terbaca */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+/* Supaya semua elemen tetap di atas background */
+main, header, nav, footer, section {
+  position: relative;
+  z-index: 1;
+}
+
+/* === Header === */
+header {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header h3 {
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
+
+/* === Navigasi === */
+nav {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 5%;
+  border-bottom: 4px solid #0d47a1;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+nav ul li a:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.08);
+}
+
+nav ul li a.active {
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* === Container Utama === */
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(31,41,55,0.06);
+  overflow: visible;
+}
+
+/* === Perbaikan Pohon Faktor === */
+.tree-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-top: 28px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.tree-container {
+  position: relative;
+  width: 340px;
+  height: 450px;
+  overflow: visible;
+}
+.tree {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: linear-gradient(180deg, rgba(30,136,229,0.03), transparent);
+  border-radius: 8px;
+  padding: 8px;
+  overflow: visible;
+}
+.line {
+  position: absolute;
+  background: #0d47a1;
+  z-index: 1;
+}
+.line.vertical { width: 3px; }
+.line.horizontal { height: 3px; }
+.node {
+  position: absolute;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* === Video YouTube di tengah === */
+iframe {
+  display: block;
+  margin: 18px auto;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  height: 360px;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  /* === Sub Container untuk Setiap Materi === */
+  .sub-container {
+    background-color: #e3f2fd;          /* Biru lembut */
+    border-left: 6px solid #1565c0;     /* Garis aksen biru tua di kiri */
+    border-radius: 14px;                /* Sudut melengkung lembut */
+    padding: 20px 25px;                 /* Ruang dalam */
+    margin: 30px 0;                     /* Jarak antar materi */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Bayangan lembut */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Efek saat diarahkan kursor */
+  .sub-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  }
+
+  /* Judul di dalam sub container */
+  .sub-container h3 {
+    color: #0d47a1;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  /* Paragraf dan teks umum */
+  .sub-container p {
+    color: #212121;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* Contoh blok kode atau amatan */
+  .sub-container pre {
+    background-color: #bbdefb;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+  }
+
+  /* Contoh bagian penting */
+  .highlight-box {
+    background-color: #bbdefb;
+    border-left: 5px solid #1976d2;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+</style>
+<style>
+/* ===✨ STYLE KHUSUS UNTUK ALAT BANTU INTERAKTIF === */
+
+/* 🎈 Kotak Kontrol Input */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.controls input[type="number"] {
+  padding: 10px 14px;
+  border: 2px solid #2196f3;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1565c0;
+  background: #e3f2fd;
+  transition: all 0.3s ease;
+}
+.controls input[type="number"]:focus {
+  outline: none;
+  border-color: #0d47a1;
+  background: #bbdefb;
+}
+
+/* Tombol cerah dan anak-anak */
+.controls button {
+  background: linear-gradient(90deg, #42a5f5, #1e88e5);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.controls button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+/* 🎲 Kotak hasil */
+.result-box {
+  background: #e3f2fd;
+  border: 2px dashed #2196f3;
+  padding: 15px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0d47a1;
+  transition: 0.3s;
+}
+.result-box:hover {
+  background: #bbdefb;
+  transform: scale(1.02);
+}
+
+/* 🌳 Pohon Faktor — rapatkan jarak dan perhalus transisi */
+.tree-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;           /* sebelumnya 30px → dikurangi */
+  margin: 15px auto;   /* sebelumnya 30px → dikurangi */
+  padding: 15px;       /* sebelumnya 20–30px → dikurangi */
+  background: linear-gradient(180deg, #e3f2fd, #bbdefb);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tree-container {
+  position: relative;
+  width: 320px;
+  min-height: 280px;  /* cukup untuk faktor kecil */
+  overflow: visible;
+}
+
+/* 🎯 Rapatkan area bawah antara pohon faktor dan LKPD */
+.tree-wrapper + .card {
+  margin-top: 25px !important; /* sebelumnya bisa 60–80px tergantung default */
+}
+
+/* Tambahan: rapatkan semua <hr> agar tidak terlalu jauh */
+hr {
+  margin: 20px 0 !important; /* sebelumnya 30px atau lebih */
+}
+
+
+.node {
+  position: absolute;
+  background: #42a5f5;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+.node:hover {
+  transform: scale(1.15);
+  background: #1e88e5;
+}
+
+/* Garis penghubung antar node */
+.line {
+  position: absolute;
+  background: #0d47a1;
+}
+.line.vertical {
+  width: 3px;
+}
+.line.horizontal {
+  height: 3px;
+}
+
+/* 🎉 Kotak KPK */
+.kpk-box {
+  background: #fff8e1;
+  border: 2px dashed #ffb300;
+  color: #f57f17;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* 🧩 Tampilan Youtube */
+iframe {
+  display: block;
+  margin: 20px auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Matematika Kelas 5</h1>
+  <h3>Materi Bilangan: Kelipatan Persekutuan Terkecil (KPK)</h3>
+  <p>Pembelajaran interaktif untuk memahami konsep KPK dengan menyenangkan!</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="Index.html">🏠 Beranda</a></li>
+    <li><a href="Materi KPK.html" class="active">🔢 Materi Bilangan</a></li>
+    <li><a href="Materi Geometri.html">📐 Materi Geometri</a></li>
+    <li><a href="Kuis.html">🧩 Kuis Bilangan</a></li>
+    <li><a href="Kuis Geometri.html">⚡ Kuis Geometri</a></li>
+    <li><a href="Evaluasi.html">✅ Evaluasi Bilangan</a></li>
+    <li><a href="Evaluasi Geometri.html">🏅 Evaluasi Geometri</a></li>
+  </ul>
+</nav>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll("nav ul li a").forEach(link=>{
+  if(link.getAttribute("href")===currentPage){
+    link.classList.add("active");
+  }
+});
+</script>
+
+<!-- === Mulai konten utama === -->
+<div class="container">
+<h3>🎯 Capaian Pembelajaran</h3>
+<ul>
+Menunjukkan pemahaman dan intuisi bilangan 
+(number sense) pada bilangan cacah sampai 1.000.000; membaca, menulis, menentukan nilai tempat, 
+membandingkan, mengurutkan, melakukan komposisi dan dekomposisi bilangan; menyelesaikan masalah yang berkaitan dengan uang; 
+melakukan pengurangan, operasi perkalian, penjumlahan, dan pembagian bilangan cacah sampai 100.000; serta
+<mark>menyelesaikan masalah yang berkaitan dengan KPK</mark> dan FPB.
+</ul>
+
+<h3>🎯 Tujuan Pembelajaran</h3>
+<ul>
+<li>Peserta didik dapat menentukan kelipatan, kelipatan persekutuan, dan KPK dengan tepat (C3).</li>
+<li>Peserta didik dapat memecahkan masalah KPK dalam soal cerita (C4).</li>
+<li>Peserta didik dapat menunjukkan hasil yang berkaitan dengan KPK dengan tepat (P3).</li>
+</ul>
+
+<!-- =======================
+     1️⃣ MATERI: KELIPATAN
+======================== -->
+<section id="kelipatan">
+  <h3><strong>1️⃣ Materi: Kelipatan</strong></h3>
+
+  <div class="materi-KPK">
+    <img src="D:\Mat10\Ayunan.jpg" alt="Ayunan">
+    <ul>
+      <li><strong>Kamu dan temanmu sedang bermain ayunan di taman</strong></li>
+    </ul>
+  </div>
+
+  <p>Bayangkan kamu dan temanmu sedang bermain ayunan di taman pada hari minggu. Kamu mendorong ayunanmu setiap <strong>3 detik</strong> sekali, sedangkan temanmu mendorong ayunannya setiap <strong>4 detik</strong> sekali. Kalian mulai bersama pada detik ke-0.</p>
+  <p>Setelah itu, kamu mendorong di detik ke-3, 6, 9, 12, dan seterusnya. Temanmu mendorong di detik ke-4, 8, 12, 16, dan seterusnya.</p>
+
+  <p><strong>💡 Ayo Amati</strong></p>
+  <pre>
+Doronganmu: 3, 6, 9, 12, 15, 18, …
+Dorongan temanmu: 4, 8, 12, 16, 20, …
+  </pre>
+
+  <p>Angka-angka tersebut muncul karena kamu mengulang-ulang penjumlahan dengan bilangan yang sama.  
+  Hasil penjumlahan itu disebut <strong>kelipatan</strong>.</p>
+
+  <div class="example">
+    <strong>Contoh:</strong><br>
+    Kelipatan 3 → 3, 6, 9, 12, 15, …<br>
+    Kelipatan 4 → 4, 8, 12, 16, 20, …
+  </div>
+
+  <p><strong>Kesimpulan:</strong>  
+  Kelipatan adalah hasil dari mengalikan suatu bilangan dengan bilangan bulat positif.</p>
+</section>
+
+<h3>🔢 Alat Bantu Interaktif Menentukan Kelipatan</h3>
+<p>Masukkan sebuah bilangan, lalu klik tombol untuk menampilkan <strong>10 kelipatan pertama</strong> dari bilangan tersebut.</p>
+
+<div class="controls">
+  <input type="number" id="kelipatanInput" min="1" placeholder="Masukkan bilangan">
+  <button onclick="tampilkanKelipatan()">Tampilkan Kelipatan</button>
+</div>
+
+<div id="hasilKelipatan" class="result-box" style="margin:20px auto; max-width:400px; font-size:16px;">
+  Hasil kelipatan akan muncul di sini.
+</div>
+
+<script>
+function tampilkanKelipatan() {
+  const bil = parseInt(document.getElementById('kelipatanInput').value);
+  const hasilBox = document.getElementById('hasilKelipatan');
+  
+  if (isNaN(bil) || bil <= 0) {
+    hasilBox.innerHTML = "⚠️ Masukkan bilangan bulat positif.";
+    hasilBox.style.color = "red";
+    return;
+  }
+
+  let kelipatan = [];
+  for (let i = 1; i <= 10; i++) {
+    kelipatan.push(bil * i);
+  }
+
+  hasilBox.style.color = "#0d47a1";
+  hasilBox.innerHTML = `
+    🔸 <strong>Bilangan:</strong> ${bil}<br>
+    🔹 <strong>10 Kelipatan Pertama:</strong><br>
+    ${kelipatan.join(", ")}
+  `;
+}
+</script>
+
+<hr>
+
+<!-- ===============================
+     2️⃣ MATERI: KELIPATAN PERSEKUTUAN
+================================= -->
+<section id="kelipatan-persekutuan">
+  <h3><strong>2️⃣ Materi: Kelipatan Persekutuan</strong></h3>
+
+  <div class="materi-KPK">
+    <img src="D:\Mat10\Loncat Tali.jpg" alt="Loncat Tali">
+    <ul>
+      <li><strong>Kamu dan temanmu bermain lompat tali bersama</strong></li>
+    </ul>
+  </div>
+
+  <p>Di sekolah, saat pelajaran Olahraga, kamu dan temanmu bermain lompat tali bersama. Kamu melompat setiap <strong>2 detik</strong> sekali, sedangkan temanmu melompat setiap <strong>3 detik</strong> sekali.  
+  Pada detik ke-0, kalian melompat bersamaan.</p>
+  <p>Setelah itu, kamu melompat di detik ke-2, 4, 6, 8, 10, 12, 14, 16, dst..., sedangkan temanmu melompat di detik ke-3, 6, 9, 12, 15, 18, 21, 24 dst...</p>
+
+  <p><strong>💡 Ayo Amati</strong></p>
+  <pre>
+Kelipatan dari lompatanmu: 2, 4, 6, 8, 10, 12, 14, 16, …
+Kelipatan dari lompatan temanmu: 3, 6, 9, 12, 15, 18, 21, 24 …
+  </pre>
+
+  <p>Perhatikan, ada beberapa waktu yang sama — misalnya pada detik ke-6 dan ke-12.  
+  Itu artinya kalian melompat bersamaan lagi pada waktu tersebut.</p>
+
+  <p>Angka-angka yang sama dalam kedua daftar itulah yang disebut <strong>kelipatan persekutuan</strong> dari 2 dan 3.</p>
+
+  <div class="example">
+    <strong>Contoh:</strong><br>
+    Kelipatan 2 → 2, 4, 6, 8, 10, 12, 14, 16, dst …<br>
+    Kelipatan 3 → 3, 6, 9, 12, 15, 18, 21, 24, dst …<br>
+    Jadi, kelipatan persekutuan dari 2 dan 3 adalah 6, 12, dst …
+  </div>
+
+  <p><strong>Kesimpulan:</strong>  
+  Kelipatan persekutuan adalah bilangan-bilangan yang sama dari dua atau lebih daftar kelipatan.</p>
+</section>
+
+<h3>🧮 Alat Bantu Interaktif Menentukan Kelipatan Persekutuan</h3>
+<p>Masukkan dua bilangan untuk menampilkan <strong>10 kelipatan pertama</strong> dari masing-masing bilangan dan menentukan <strong>kelipatan persekutuan</strong>-nya.</p>
+
+<div class="controls">
+  <input type="number" id="bil1" min="1" placeholder="Bilangan 1">
+  <input type="number" id="bil2" min="1" placeholder="Bilangan 2">
+  <button onclick="tampilkanKelipatanPersekutuan()">Tampilkan Kelipatan Persekutuan</button>
+</div>
+
+<div id="hasilPersekutuan" class="result-box" style="margin:20px auto; max-width:500px; font-size:16px;">
+  Hasil kelipatan persekutuan akan muncul di sini.
+</div>
+
+<script>
+function tampilkanKelipatanPersekutuan() {
+  const bil1 = parseInt(document.getElementById('bil1').value);
+  const bil2 = parseInt(document.getElementById('bil2').value);
+  const hasilBox = document.getElementById('hasilPersekutuan');
+
+  if (isNaN(bil1) || isNaN(bil2) || bil1 <= 0 || bil2 <= 0) {
+    hasilBox.innerHTML = "⚠️ Masukkan dua bilangan bulat positif.";
+    hasilBox.style.color = "red";
+    return;
+  }
+
+  // buat daftar kelipatan
+  let kelipatan1 = [], kelipatan2 = [];
+  for (let i = 1; i <= 10; i++) {
+    kelipatan1.push(bil1 * i);
+    kelipatan2.push(bil2 * i);
+  }
+
+  // cari kelipatan persekutuan
+  let persekutuan = kelipatan1.filter(x => kelipatan2.includes(x));
+
+  hasilBox.style.color = "#0d47a1";
+  hasilBox.innerHTML = `
+    🔸 <strong>Bilangan 1:</strong> ${bil1}<br>
+    🔹 <strong>Bilangan 2:</strong> ${bil2}<br><br>
+    🧩 <strong>10 Kelipatan Pertama ${bil1}:</strong> ${kelipatan1.join(", ")}<br>
+    🧩 <strong>10 Kelipatan Pertama ${bil2}:</strong> ${kelipatan2.join(", ")}<br><br>
+    💡 <strong>Kelipatan Persekutuan:</strong> ${persekutuan.length ? persekutuan.join(", ") : "Tidak ditemukan pada 10 kelipatan pertama"}
+  `;
+}
+</script>
+
+<hr>
+
+<!-- ===============================
+     3️⃣ MATERI: KPK (KELIPATAN PERSEKUTUAN TERKECIL)
+================================= -->
+<section id="kpk">
+  <h3><strong>3️⃣ Materi: Kelipatan Persekutuan Terkecil (KPK)</strong></h3>
+
+  <div class="materi-KPK">
+    <img src="D:\Mat10\Lampu.png" alt="Lampu">
+    <ul>
+      <li><strong>Dua lampu yang menyala bergantian</strong></li>
+    </ul>
+  </div>
+
+  <p>Pada bulan Agustus, sebuah desa mulai menghias lingkungannya dengan lampu kelap-kelip. Lampu-lampu tersebut menyala bergantian. Lampu A menyala setiap <strong>5 detik</strong> sekali.  
+     Lampu B menyala setiap <strong>6 detik</strong> sekali.  
+     Pada detik ke-0, keduanya menyala bersamaan.</p>
+
+  <p><strong>💡 Ayo Amati</strong></p>
+  <pre>
+Kalipatan dari Lampu A: 5, 10, 15, 20, 25, 30, …
+Kelipatan dari Lampu B: 6, 12, 18, 24, 30, …
+  </pre>
+
+  <p>Perhatikan bahwa kedua lampu akan menyala bersamaan lagi pada detik ke-30.  
+  Angka 30 adalah <strong>kelipatan persekutuan terkecil</strong> dari 5 dan 6.</p>
+
+  <div class="example">
+    <strong>Kesimpulan:</strong><br>
+    KPK atau Kelipatan Persekutuan Terkecil adalah bilangan persekutuan terkecil dari dua atau lebih bilangan.
+  </div>
+
+  <div class="note">
+    <strong>🏁 Penutup:</strong>
+    <ul>
+      <li>Kelipatan → hasil pengulangan suatu bilangan.</li>
+      <li>Kelipatan Persekutuan → bilangan yang sama dari dua daftar kelipatan.</li>
+      <li>KPK → bilangan persekutuan yang paling kecil.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======== CSS STYLE TAMBAHAN ======== -->
+<style>
+.materi-KPK {
+  text-align: center;
+  margin: 20px auto;
+}
+.materi-KPK img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.materi-KPK ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: #333;
+}
+.example {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.note {
+  background: #fff3cd;
+  border-left: 4px solid #ffb300;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+hr {
+  border: 1px dashed #bbb;
+  margin: 30px 0;
+}
+h3 {
+  color: #1a237e;
+}
+pre {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+</style>
+
+<h3>🎥 Video Pembelajaran</h3>
+<iframe width="560" height="315" 
+        src="D:\Mat10\KELIPATAN, KELIPATAN PERSEKUTUAN DAN KPK.mp4"
+        title="Video Pembelajaran" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+<h3>🌳 Pohon Faktor Interaktif</h3>
+<p>Masukkan dua bilangan untuk melihat pohon faktor, faktor prima, dan hasil KPK-nya:</p>
+
+<div class="controls">
+<input type="number" id="num1" value="36" min="2">
+<input type="number" id="num2" value="60" min="2">
+<button onclick="drawTrees()">Buat Pohon Faktor</button>
+</div>
+
+<div class="tree-wrapper">
+<div class="tree-container"><div class="tree" id="tree1"></div></div>
+<div class="tree-container"><div class="tree" id="tree2"></div></div>
+<div style="display:flex; flex-direction:column; gap:14px;">
+<div class="result-box" id="factors1">Faktor Prima 1</div>
+<div class="result-box" id="factors2">Faktor Prima 2</div>
+<div class="result-box kpk-box" id="kpkResult">KPK</div>
+</div>
+</div>
+</div>
+
+<!-- ==== LKPD 1 START ==== -->
+<div class="card">
+  <header class="header-lkpd">
+    <div class="logo">LKPD 1</div>
+    <div class="header-content">
+      <div class="judul">LEMBAR KERJA PESERTA DIDIK</div>
+      <div class="sub">Tujuan Pembelajaran: Peserta didik dapat menentukan kelipatan, kelipatan persekutuan, dan KPK dengan tepat (C3)</div>
+      <div class="sub">KELAS 5 | SEKOLAH DASAR</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h4>Nama Kelompok :</h4>
+    <input type="text" placeholder="1. ................................................................">
+    <input type="text" placeholder="2. ................................................................">
+    <input type="text" placeholder="3. ................................................................">
+    <input type="text" placeholder="4. ................................................................">
+    <input type="text" placeholder="5. ................................................................">
+  </section>
+
+  <section class="section">
+    <h3>KEGIATAN</h3>
+
+    <label>Soal 1 :</label>
+    <h4>Tuliskan lima kelipatan pertama dari bilangan 3!</h4>
+    <textarea id="jawab1-lkpd1" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan1-lkpd1">
+      Kelipatan 3 adalah proses penjumlahan berulang bilangan 3, jika lima kelipatan pertama, berarti kelipatannya adalah 3, 6, 9, 12, 15.
+    </div>
+
+    <label>Soal 2 :</label>
+    <h4>Tuliskan lima kelipatan pertama dari bilangan 8!</h4>
+    <textarea id="jawab2-lkpd1" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan2-lkpd1">
+      Kelipatan adalah proses penjumlahan berulang bilangan 8, jika lima kelipatan pertama, berarti kelipatannya adalah 8, 16, 24, 32, 40.
+    </div>
+
+    <label>Soal 3 :</label>
+    <h4>Tentukan kelipatan persekutuan dari 4 dan 6 sampai kelipatan ke-5!</h4>
+    <textarea id="jawab3-lkpd1" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan3-lkpd1">
+      Langkah: <br>
+      1. Kelipatan dari 4 = 4, 8, 12, 16, 20<br>
+      2. Kelipatan dari 6 = 6, 12, 18, 24, 30<br>
+      3. Tentukan kelipatan yang sama → 12
+    </div>
+
+    <label>Soal 4 :</label>
+    <h4>Tentukan KPK dari 5 dan 7!</h4>
+    <textarea id="jawab4-lkpd1" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan4-lkpd1">
+      Langkah:<br>
+      1. Faktor dari 5 = 5 (Bilangan Prima)<br>
+      2. Faktor dari 7 = 7 (Bilangan Prima)<br>
+      3. KPK dari 3 dan 5 = 5 x 7 = 35
+    </div>
+
+    <label>Soal 5 :</label>
+    <h4>Tentukan KPK dari 6, 8, dan 12!</h4>
+    <textarea id="jawab5-lkpd1" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan5-lkpd1">
+      Langkah: <br>
+      1. Faktor dari 6 = 2 x 3<br>
+      2. Faktor dari 8 = 2 x 2 x 2<br>
+      3. Faktor dari 12 = 2 x 2 x 3<br>
+      4. KPK dari 6, 8, dan 12 adalah 2<sup>3</sup> x 3 = 24
+    </div>
+
+    <div class="actions" style="text-align:center; margin-top:15px;">
+      <button class="btn-check" onclick="periksaJawabanLKPD1()">✅ Periksa Jawaban</button>
+      <button class="btn-reset" onclick="ulangJawabanLKPD1()">🔄 Ulangi</button>
+    </div>
+    <div id="nilai-lkpd1" style="text-align:center; font-weight:bold; color:#1565c0; margin-top:10px;"></div>
+  </section>
+</div>
+<!-- ==== LKPD 1 END ==== -->
+
+<!-- ==== LKPD 2 START ==== -->
+<div class="card">
+  <header class="header-lkpd">
+    <div class="logo">LKPD 2</div>
+    <div class="header-content">
+      <div class="judul">LEMBAR KERJA PESERTA DIDIK</div>
+      <div class="sub">Tujuan Pembelajaran: Peserta didik dapat memecahkan masalah KPK dalam soal cerita (C4)</div>
+      <div class="sub">KELAS 5 | SEKOLAH DASAR</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <h4>Nama Kelompok :</h4>
+    <input type="text" placeholder="1. ................................................................">
+    <input type="text" placeholder="2. ................................................................">
+    <input type="text" placeholder="3. ................................................................">
+    <input type="text" placeholder="4. ................................................................">
+    <input type="text" placeholder="5. ................................................................">
+  </section>
+
+  <section class="section">
+    <h3>KEGIATAN</h3>
+
+    <label>Soal 1 :</label>
+    <img src="D:\Mat10\LKPD 2.1.1.png" alt="LKPD 2 Soal 1" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+    <h4>Putri memiliki 12 permen dan Nazil memiliki 18 permen. Berapa banyak permen dalam setiap kantong jika dibagi sama banyak?</h4>
+    <textarea id="jawab1-lkpd2" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan1-lkpd2">
+      Langkah: <br>
+      1. Faktor dari 12 = 2 x 2 x 3 <br>
+      2. Faktor dari 18 = 2 x 3 x 3 <br>
+      3. KPK dari 12 dan 18 adalah 2<sup>2</sup> x 3<sup>2</sup> = 36
+    </div>
+
+    <label>Soal 2 :</label>
+    <img src="D:\Mat10\LKPD 2.2.png" alt="LKPD 2 Soal 2" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+    <h4>Eyza bermain ayunan bersama Dipta di taman. Eyza berayun tiap 6 detik, sedangkan Dipta berayun tiap 8 detik. Setelah berapa detik Eyza dan Dipta berayun bersamaan lagi?</h4>
+    <textarea id="jawab2-lkpd2" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan2-lkpd2">
+      Langkah: <br>
+      1. Faktor dari 6 = 2 x 3 <br>
+      2. Faktor dari 8 = 2 x 2 x 2 <br>
+      3. KPK dari 6 dan 12 adalah 2<sup>3</sup> x 3 = 24
+    </div>
+
+    <label>Soal 3 :</label>
+    <img src="D:\Mat10\LKPD 2.1.png" alt="LKPD 2 Soal 3" style="display:block; margin:10px auto; max-width:300px; border:2px solid #1565c0; border-radius:8px;">
+    <h4>Tiga tim lari estafet mulai pukul 07.00, berlari tiap 15, 20, dan 30 menit. Kapan ketiganya akan bersamaan lagi di start?</h4>
+    <textarea id="jawab3-lkpd2" placeholder="Tuliskan jawabanmu di sini ..."></textarea>
+    <div class="pembahasan" id="pembahasan3-lkpd2">
+      Langkah: <br>
+      1. Faktor dari 15 = 3 x 5 <br>
+      2. Faktor dari 20 = 2 x 2 x 5 <br>
+      3. Faktor dari 30 = 2 x 3 x 5 <br>
+      4. KPK dari 15, 20, dan 30 adalah 2<sup>2</sup> x 3 x 5 = 60, sehingga mereka akan bersamaan lagi di start pada pukul 07.00 + 60 menit = 08.00
+    </div>
+
+    <div class="actions" style="text-align:center; margin-top:15px;">
+      <button class="btn-check" onclick="periksaJawabanLKPD2()">✅ Periksa Jawaban</button>
+      <button class="btn-reset" onclick="ulangJawabanLKPD2()">🔄 Ulangi</button>
+    </div>
+    <div id="nilai-lkpd2" style="text-align:center; font-weight:bold; color:#1565c0; margin-top:10px;"></div>
+  </section>
+</div>
+<!-- ==== LKPD 2 END ==== -->
+
+<style>
+/* Textarea bergaris */
+textarea {
+  width: 100%;
+  height: 100px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 8px 0 8px; /* padding atas agar placeholder berada di atas garis */
+  font-size: 16px;
+  line-height: 1.5em;
+  resize: vertical;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 1.5em,
+    #ccc 1.5em,
+    #ccc 1.55em
+  );
+}
+
+textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  line-height: normal;
+}
+
+/* Pembahasan tersembunyi */
+.pembahasan {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background: #f9f9f9;
+  border-left: 4px solid #1565c0;
+  border-radius: 6px;
+  padding: 0 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #333;
+}
+.pembahasan.show {
+  max-height: 300px;
+  padding: 8px 12px;
+}
+
+/* Tombol */
+.btn-check, .btn-reset {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+.btn-check {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: white;
+}
+.btn-check:hover { transform: scale(1.05); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+.btn-reset {
+  background: linear-gradient(45deg, #f44336, #e57373);
+  color: white;
+}
+.btn-reset:hover { transform: scale(1.05); box-shadow: 0 6px 12px rgba(0,0,0,0.2); }
+</style>
+
+<script>
+// ===== LKPD 1 =====
+const kunciJawabanLKPD1 = {1:"3,6,9,12,15",2:"8,16,24,32,40",3:"12",4:"35",5:"24"};
+const kataKunciProsesLKPD1 = {3:["kelipatan","12"],4:["faktor","35"],5:["faktor","2","3","24"]};
+function periksaJawabanLKPD1(){
+  let total=0;
+  for(let i=1;i<=5;i++){
+    document.getElementById(`pembahasan${i}-lkpd1`).classList.add('show');
+    let jawaban=document.getElementById(`jawab${i}-lkpd1`).value.toLowerCase().replace(/\s/g,'');
+    let kunci=kunciJawabanLKPD1[i].replace(/\s/g,'');
+    if(i<=2){ if(jawaban===kunci) total+=20; }
+    else{
+      let prosesBenar=kataKunciProsesLKPD1[i].every(k=>jawaban.includes(k));
+      if(prosesBenar) total+=20; else if(jawaban.includes(kunci)) total+=10;
+    }
+  }
+  document.getElementById('nilai-lkpd1').innerHTML=`🎯 Total Nilai Kelompok: ${total} / 100`;
+}
+function ulangJawabanLKPD1(){
+  for(let i=1;i<=5;i++){
+    document.getElementById(`jawab${i}-lkpd1`).value='';
+    document.getElementById(`pembahasan${i}-lkpd1`).classList.remove('show');
+  }
+  document.getElementById('nilai-lkpd1').innerHTML='';
+}
+
+// ===== LKPD 2 =====
+const kunciJawabanLKPD2={1:"36",2:"24",3:"08.00"};
+const kataKunciProsesLKPD2={1:["faktor","36"],2:["faktor","24"],3:["faktor","60","08.00"]};
+function periksaJawabanLKPD2(){
+  let total=0;
+  for(let i=1;i<=3;i++){
+    document.getElementById(`pembahasan${i}-lkpd2`).classList.add('show');
+    let jawaban=document.getElementById(`jawab${i}-lkpd2`).value.toLowerCase().replace(/\s/g,'');
+    let kunci=kunciJawabanLKPD2[i].replace(/\s/g,'');
+    let prosesBenar=kataKunciProsesLKPD2[i].every(k=>jawaban.includes(k));
+    if(prosesBenar) total+=33; else if(jawaban.includes(kunci)) total+=15;
+  }
+  if(total>100) total=100;
+  document.getElementById('nilai-lkpd2').innerHTML=`🎯 Total Nilai Kelompok: ${total} / 100`;
+}
+function ulangJawabanLKPD2(){
+  for(let i=1;i<=3;i++){
+    document.getElementById(`jawab${i}-lkpd2`).value='';
+    document.getElementById(`pembahasan${i}-lkpd2`).classList.remove('show');
+  }
+  document.getElementById('nilai-lkpd2').innerHTML='';
+}
+</script>
+
+
+<!-- ==== STYLE === -->
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f7fb;
+  margin: 0;
+  padding: 20px;
+}
+
+/* HEADER LKPD */
+.header-lkpd {
+  background-color: #1e88e5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.header-lkpd .logo {
+  font-weight: bold;
+  font-size: 20px;
+  background: white;
+  color: #1e88e5;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.header-lkpd .judul {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.header-lkpd .sub {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* CARD */
+.card {
+  background: #b9d2ec;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 30px auto;
+  max-width: 850px;
+  padding-bottom: 10px;
+}
+
+/* SECTION */
+.section {
+  padding: 16px 24px;
+}
+
+/* INPUTS */
+input[type="text"], textarea {
+  display: block;
+  width: 100%;
+  margin: 6px 0 12px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+/* GAMBAR MATERI */
+.materi-KPK {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.materi-KPK img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #555;
+}
+</style>
+
+<script>
+function isPrime(n){if(n<2)return false;for(let i=2;i<=Math.sqrt(n);i++)if(n%i===0)return false;return true;}
+function clearTree(id){document.getElementById(id).innerHTML='';}
+function createNode(treeId,value,x,y){
+ const node=document.createElement('div');
+ node.className='node';node.style.left=x+'px';node.style.top=y+'px';
+ node.textContent=value;document.getElementById(treeId).appendChild(node);
+ return node;
+}
+function drawTreeLine(treeId,x1,y1,x2,y2){
+ const nodeSize=44;
+ const vertY1=y1+nodeSize;
+ const midY=(vertY1+y2)/2;
+ const vert=document.createElement('div');vert.className='line vertical';
+ vert.style.height=(midY-vertY1)+'px';
+ vert.style.left=(x1+nodeSize/2)+'px';
+ vert.style.top=vertY1+'px';
+ document.getElementById(treeId).appendChild(vert);
+ const horiz=document.createElement('div');horiz.className='line horizontal';
+ horiz.style.width=Math.abs(x2-x1)+'px';
+ horiz.style.left=(Math.min(x1,x2)+nodeSize/2)+'px';
+ horiz.style.top=midY+'px';
+ document.getElementById(treeId).appendChild(horiz);
+ const vert2=document.createElement('div');vert2.className='line vertical';
+ vert2.style.height=(y2-midY)+'px';
+ vert2.style.left=(x2+nodeSize/2)+'px';
+ vert2.style.top=midY+'px';
+ document.getElementById(treeId).appendChild(vert2);
+}
+function getPrimeFactors(n){let f=[];for(let i=2;i<=n;i++){while(n%i===0){f.push(i);n/=i;}}return f;}
+function factorTree(treeId,n,x,y,spread=70){
+ createNode(treeId,n,x,y);
+ if(isPrime(n)||n===1)return y+50;
+ for(let i=2;i<=n;i++){
+  if(n%i===0){
+   let left=i,right=n/i;
+   let childY=y+110;
+   let childX1=x-spread,childX2=x+spread;
+   drawTreeLine(treeId,x,y,childX1,childY);
+   drawTreeLine(treeId,x,y,childX2,childY);
+   factorTree(treeId,left,childX1,childY,spread/1.35);
+   factorTree(treeId,right,childX2,childY,spread/1.35);
+   break;
+  }
+ }
+}
+function drawTrees(){
+ const n1=parseInt(document.getElementById('num1').value);
+ const n2=parseInt(document.getElementById('num2').value);
+ if(isNaN(n1)||n1<2||isNaN(n2)||n2<2){alert('Bilangan ≥2');return;}
+ clearTree('tree1');clearTree('tree2');
+ factorTree('tree1',n1,150,10);
+ factorTree('tree2',n2,150,10);
+ const f1=getPrimeFactors(n1);const f2=getPrimeFactors(n2);
+ document.getElementById('factors1').textContent=`Faktor prima ${n1}: ${f1.join(' × ')}`;
+ document.getElementById('factors2').textContent=`Faktor prima ${n2}: ${f2.join(' × ')}`;
+ let kpk=1;
+ const allPrimes=[...new Set([...f1,...f2])];
+ allPrimes.forEach(p=>{const mp=Math.max(f1.filter(f=>f===p).length,f2.filter(f=>f===p).length);kpk*=p**mp;});
+ document.getElementById('kpkResult').textContent=`KPK(${n1},${n2}) = ${kpk}`;
+}
+drawTrees();
+</script>
+</body>
+</html>
